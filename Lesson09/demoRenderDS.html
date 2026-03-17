@@ -1,0 +1,153 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Danh sách sản phẩm</title>
+        <style>
+            *{
+                font-size: 16px;
+            }
+            .product-box {
+                width: 30%;          
+                border: 1px solid #ccc;
+                margin-bottom: 10px;
+            }           
+            .w-100 {
+                width: 100%;
+            }
+            h1{
+                text-align: center;
+            }
+            .produc-content{
+                text-align: center;
+                font-size: 1rem;
+            }
+            a{
+                text-decoration: none;
+                color: black;
+            }
+            #productList{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <h1>Danh sách sản phẩm</h1>
+            <div id="productList">
+
+            </div>
+        </section>
+        <script src="js/jquery-4.0.0.min.js"></script>
+        <script>
+            var productList = [
+                {
+                    id: 1,
+                    name: "Iphone 14 Pro Max",
+                    price: 30000000,
+                    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLg4PAK3s0-p_6j8rFUtNbNyqclNj-AI8sJg&s"
+                },
+                {
+                    id:2,
+                    name: "Iphone 15 Pro Max",
+                    price: 20000000,
+                    img: "https://product.hstatic.net/1000406564/product/iphonexs-1_a39c946bbe6140d9b301585f9df3b381_master.jpg"
+                },
+                {
+                    id:3,
+                    name: "Iphone 12 Pro Max",
+                    price: 32000000,
+                    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN808conEJpCVHOo4dPuTk68TM33lz3oFtfw&s"
+                },
+                {
+                    id:4,
+                    name: "Iphone 11 Pro ",
+                    price: 52000000,
+                    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLg4PAK3s0-p_6j8rFUtNbNyqclNj-AI8sJg&s"
+                },
+                {
+                    id:5,
+                    name: "Iphone 10 Pro ",
+                    price: 27000000,
+                    img: "https://cdn.dienthoaigiakho.vn/photos/1761636732753-Xiaomi-Redmi-15C-2.jpg"
+                },
+                {
+                    id:6,
+                    name: "Iphone 14 Pro ",
+                    price: 28000000,
+                    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN808conEJpCVHOo4dPuTk68TM33lz3oFtfw&s"
+                }
+            ]
+                    
+            function renderProduct(pro){
+                let html = `<div class="product-box">
+                    <div class="product-img">
+                        <img class="w-100"
+                            src="${pro.img}"
+                            alt="iphone">
+                    </div>
+                    <div class="produc-content">
+                        <a href="#/${pro.id}"><h3 class="product-name">${pro.name}</h3></a>
+                        <p class="product-price">Giá: ${pro.price.toLocaleString('vi-VN')}đ</p>
+                        <button data-id="${pro.id}" class="product-buy">Mua hàng</button>
+                    </div>
+                </div>`;
+                return html;
+            }
+            // function renderListProduct(listPro){
+            //     let html = "";
+            //     for(var i = 0; i < listPro.length; i++){
+            //         html += renderProduct(listPro[i]);
+            //     }
+            //     $("#productList").html(html);
+            // }
+            function renderListProduct(listPro){
+                for(var i = 0; i < listPro.length; i++){
+                    $("#productList").append(renderProduct(listPro[i]));
+                }
+                
+            }
+            renderListProduct(productList);
+
+            // Mua hàng sử dụng localStorage
+            $(".product-buy").click(function() {
+                // Lấy id sản phẩm từ href của thẻ a
+                var idProduct = $(this).attr("data-id");
+                // console.log(idProduct); // kiểm tra i snpẩ ã y ợc chưa
+                // Tìm sản phẩm trong mảng productList dựa vào i snpẩ ã y ợc
+                // var productBuy = productList.find(function(pro) {
+                //     return pro.id == idProduct;
+                // });
+                var productBuy = productList.find(pro => pro.id == idProduct);
+                // câu ện tưng ơng với câu lệnh trên
+                // for(var product of productBuy) {
+                //     if(product.id == idProduct) {
+                //         productBuy = product;
+                //     }
+                // }
+
+                // lấy DEV2601_Cart trong localStorage, nếu chưa có thì trả về mảng rỗng
+                var carts = localStorage.getItem("DEV2601_Cart") ? 
+                JSON.parse(localStorage.getItem("DEV2601_Cart")) : [];
+
+                // lấy vị trị index nế sn pẩm  có trong giỏ hàng
+                var indexCart = carts.findIndex(pro => pro.id == idProduct);
+                console.log(indexCart); // kiểmtr ne ã y ợc chưa
+                // Kiểm tra trong ản cats  có sản phẩm muốn mua chưa,
+                //  nếu có thì tăng số lượng lên 1, 
+                // nếu chưa có thì thêm sản phẩm vào mảng carts với số lượng là 1
+                if (indexCart > -1) {
+                    carts[indexCart].quantity++;
+                } else {
+                    productBuy.quantity = 1;
+                    carts.push(productBuy);
+                }
+                // lưu product vào trong localStorage
+                localStorage.setItem("DEV2601_Cart", JSON.stringify(carts));
+              alet(" thêm sản phẩm vào giỏ hàng");
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Giỏ hàng</title>
+    </head>
+    <body>
+        <section id="cart">
+            <h1>Giỏ hàng</h1>
+            <div id="cartList">
+                <table border="1" cellspacing="0" cellpadding="5">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            // Lấy dữ liệu giỏ hàng từ localStorage
+            var carts = localStorage.getItem("DEV2601_Cart") ? 
+                JSON.parse(localStorage.getItem("DEV2601_Cart")) : [];
+            function renderCart(index,cart) {
+                var html = `<tr>
+                            <td>${index+1}</td>
+                            <td>${cart.name}</td>
+                            <td>${cart.price}</td>
+                            <td product-id = "${cart.id}">
+                                <button class="btn-quantity btn-pre">-</button>
+                                <span>${cart.quantity}</span>
+                                <button class="btn-quantity btn-plus">+</button>
+                            </td>
+                            <td >${parseFloat(cart.price * cart.quantity).toLocaleString('vi-VN')} đ</td>
+                        </tr>
+                `;
+              return html;  
+            }
+            function renderListCart(cartList) {      
+                for(var i = 0; i < cartList.length; i++) {
+                    $("#cartList tbody").append(renderCart(i,cartList[i]));
+                }
+            }
+            renderListCart(carts);
+
+            // Sự kiện click button
+            $(".btn-pre,.btn-plus").click(function() {
+                // lấy id sản phẩm từ thuộc tính product-id của thẻ td chứa button
+                var idProduct = $(this).parent().attr("product-id");
+                // tìm vị trí index của sản phẩm trong mảng carts dựa vào id sản phẩm đã lấy được
+                var indexCart = carts.findIndex(pro => pro.id == idProduct);
+                // Kiểm tra nếu click vào button trừ thì giảm số lượng đi 1, nếu click vào button cộng thì tăng số lượng lên 1
+                if($(this).hasClass("btn-pre")) {
+                    if(carts[indexCart].quantity > 1) {
+                        carts[indexCart].quantity--;
+                    }
+                } else {
+                    carts[indexCart].quantity++;
+                }
+                // Cập nhật lại giỏ hàng trong localStorage
+                localStorage.setItem("DEV2601_Cart", JSON.stringify(carts));
+                // Cập nhật lại số lượng và thành tiền trên giao diện
+                // $(this).siblings().eq(1) lấy thẻ span chứa số lượng, $(this).parent().next() lấy thẻ td chứa thành tiền
+                $(this).siblings("span").text(carts[indexCart].quantity);
+                $(this).parent().next().text(carts[indexCart].price * carts[indexCart].quantity);
+            });
+        </script>
+    </body>
+</html>

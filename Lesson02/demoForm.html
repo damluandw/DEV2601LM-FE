@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form demo</title>
+    </head>
+    <body>
+        <form action="/sumbit" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"
+                    value="luan@gmail" required size="60"
+                    placeholder="damluan@gmail.com" />
+            </div>
+            <div>
+                <label for="pwd">password</label>
+                <input type="password" name="pwd" id="pwd"
+                    minlength="6" maxlength="20" required />
+            </div>
+            <div>
+                <label for="age">Age:</label>
+                <input type="number" name="age" id="age"
+                    min="18" max="60" step="1" required />
+            </div>
+            <div>
+                <label for="avatar">Avatar:</label>
+                <input type="file" name="avatar" id="avatar"
+                    accept=".jpg, .jpeg, .png" required />
+            </div>
+            <div>
+                <label for="gender">Gender:</label>
+                <input type="radio" name="gender" id="male" value="male" checked
+                    required />
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="female" value="female"
+                    required />
+                <label for="female">Female</label>
+            </div>
+            <div>
+                <label for="hobbies">Hobbies:</label>
+                <input type="checkbox" name="hobbies" id="hobby1"
+                    value="hobby1" />
+                <label for="hobby1">Hobby 1</label>
+                <input type="checkbox" name="hobbies" id="hobby2"
+                    value="hobby2" />
+                <label for="hobby2">Hobby 2</label>
+                <input type="checkbox" name="hobbies" id="hobby3"
+                    value="hobby3" />
+                <label for="hobby3">Hobby 3</label>
+            </div>
+            <div>
+                <textarea rows="5" cols="50" name id></textarea>
+            </div>
+            <button type="submit">Gửi</button>
+            <button type="reset">Reset</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+1. Cách sử dụng CSS
+    + inline (trong thẻ HTML) - style = ""
+    + internal (trong file HTML) - <style></style>
+    + external (ngoài file HTML) - <link src="">
+2. Các cách tương tác CSS với HTML
+    + tương tác thông qua tên Id của thẻ HTML
+    + tương tác thông qua tên class của thẻ HTML
+    + tương tác thông qua tên thuộc tính (atribute) của thẻ HTML
+    + tương tác thông qua tên thẻ HTML
+3. Các bộ chọn Tag CSS
+    + tag01 tag02 : chọn tất cả thẻ tag02 nằm trong thẻ tag01 
+    VD:    
+        <div>
+                <p> <span>....<span> </p>
+                <span>......</span>
+        </div>
+ 
+    div span{
+        color: red;
+    }
+
+    + tag01 > tag02 : chọn tất cả thẻ tag02 nằm trong và là thẻ con của thẻ tag01
+    + tag01 ~ tag02
+    + tag01 + tag02
+    + tag01,tag02
+    + ....
+4. Mức độ ưu tiên trong CSS
+    + CSS viết sau sẽ được ưu tiên sử dụng
+    + !important -> id -> class-> tên_thuộc_tính -> tên_thẻ_HTML
+    + bộ chọn càng gần/chi tiết càng được ưu tiên
+5. Cấu trúc chung của CSS
+    tên_CSS : giá_trị_CSS_1 giá_trị_CSS_2.... ; 

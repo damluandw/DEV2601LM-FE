@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript</title>
+    </head>
+    <body>
+        <script>
+            // 1. Khai báo biến
+            // systax: var <tên biến> = <giá trị>; // khai báo biến toàn cục
+            // syntax: let <tên biến> = <giá trị>;  // khai báo biến cục bộ
+            // syntax: const <tên biến> = <giá trị>; //khai báo hằng số 
+            var userName;
+            var usename;
+            var user_name;
+            var _username;
+            var __username;
+            var $username;
+            var username1;
+            // var 2username; // lỗi
+            // var user-name; // lỗi
+            // var user name; // lỗi
+            // 2. Gán biến
+            var user = "Devmaster";
+            usename = "Devmaster";
+            // 3. Hiển thị biến
+            // Cách 1: hiển thị trong console (cmd)
+            console.log(user);
+            console.log(usename);
+            // Cach 2: hiển thị trong trình duyệt
+            document.write(user);
+            document.write("<br>");
+            document.write(usename);
+            // 4. Hàm alert() hiển thị hộp thoại thông báo
+            // hàm prompt() hiển thị hộp thoại nhập liệu
+            // hàm confirm() hiển thị hộp thoại xác nhận
+            // alert("Hello Devmaster");
+            // var name = prompt("Nhập tên của bạn:");
+            // var isconfirm = confirm(" Bạn có muốn học Fontend không?");
+            // console.log(name);
+            // console.log(isconfirm);
+            // document.write("<br>");
+            // document.write("Tên của bạn là: " + name);
+            // document.write("<br>");
+            // document.write("Bạn có muốn học Fontend không? " + isconfirm);
+
+            // So sánh
+            let a =5
+            let b = "5";
+            console.log("a==b:",a == b); // true: so sánh giá trị
+            console.log("a===b:",a === b); // false: so sánh giá trị và kiểu dữ liệu
+
+            // AND
+            let age = 25;
+            let isStudent = true;
+            if(age > 18 && isStudent){
+                console.log("Bạn là sinh viên và trên 18 tuổi");
+            }
+
+            // OR
+            let isWeekend = true;
+            let isHoliday = false;
+            if(isWeekend || isHoliday){
+                console.log("Hôm nay là cuối tuần hoặc ngày lễ");
+            }
+            // NOT
+            let isRaining = false;
+            console.log("isRaining:", isRaining);
+             console.log("!isRaining:", !isRaining);
+            if(!isRaining){
+                console.log("Trời không mưa, bạn có thể ra ngoài");
+            }
+
+            // Toán tử 3 ngôi
+            (age >= 18) ? console.log("Bạn đủ tuổi để lái xe") : console.log("Bạn chưa đủ tuổi để lái xe");
+            
+
+            // kiểu giá trị
+            console.log("Kiểu dữ liệu của age:", typeof age); // number
+            console.log("Kiểu dữ liệu của isRaining:", typeof isRaining); // boolean
+            console.log("Kiểu dữ liệu của user:", typeof user); // string
+
+            // if else
+            usename = "admin";
+            password = "123456";
+            if(usename === "admin" && password === "123456"){
+                console.log("Đăng nhập thành công");
+            } else if(usename === "admin" && password !== "123456"){
+                console.log("Sai mật khẩu");
+            }else{
+                console.log("Sai tên đăng nhập");
+            }
+
+            if(usename!="admin"){
+                console.log("Sai tên đăng nhập");
+            } else if(password!="123456"){
+                console.log("Sai mật khẩu");
+            } else{
+                console.log("Đăng nhập thành công");
+            }
+
+            // switch case
+            let month = 3;
+            switch(month){
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    console.log("Tháng " + month + " có 31 ngày");
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    console.log("Tháng " + month + " có 30 ngày");
+                    break;
+                case 2:
+                    console.log("Tháng " + month + " có 28 hoặc 29 ngày");
+                    break;
+                default:
+                    console.log("Tháng không hợp lệ");
+            }
+
+            // vòng lặp for
+            for(let i = 1; i <= 10; i++){
+                console.log("Lần lặp thứ: ", i);
+            }
+
+            var arr = ["Devmaster", "JavaScript", "HTML", "CSS"];
+            for(let i = 0; i < arr.length; i++){
+                console.log("Phần tử thứ " + i + ": " + arr[i]);
+            }
+
+            // for...of + for...in
+            console.log("------------------------------");
+            console.log("Sử dụng for...of:");
+            for(let item of arr){
+                console.log("Phần tử: ", item);
+            }
+             console.log("------------------------------");
+             console.log("Sử dụng for...in:");
+            for(let index in arr){
+                console.log("Chỉ số: ", index);
+                console.log("Giá trị: ", arr[index]);
+            }
+
+
+           age = parseInt(prompt("Nhập tuổi của bạn:"));
+           console.log("Tuổi của bạn là: ",  age);
+        </script>
+    </body>
+</html>

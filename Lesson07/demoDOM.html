@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cách tương tác JS và HTML (DOM Element)</title>
+    </head>
+    <body>
+        <h2>DOM Element by Tag Name 1</h2>
+        <h2>DOM Element by Tag Name 2</h2>
+        <h2>DOM Element by Tag Name 3</h2>
+        <h3 class="h3-class">DOM Element by class Name</h3>
+        <h3 class="h3-class">DOM Element by class Name</h3>
+        <input type="text" id="input-id" value="DOM Element by ID">
+        <script>
+            var h2Elements = document.getElementsByTagName("h2");
+            console.log(h2Elements);
+            var h3Elements = document.getElementsByClassName("h3-class");
+            console.log(h3Elements);
+            var inputElement = document.getElementById("input-id");
+            console.log(inputElement.value);
+            var inputElementByQuery = document.querySelectorAll("#input-id");
+            console.log(inputElementByQuery[0].value);
+        </script>
+    </body>
+</html>

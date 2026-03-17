@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+        /* tag01 tag02 */
+        #div01 span{
+            color: red;
+        }
+         /* tag01>tag02 */
+        #div02>span{
+            color: red;
+        }
+
+        /* tag01~tag02: CSS tất cả thẻ tag02 đằng sau(bên dưới) thẻ tag01 */
+        #div03>p~span{
+            color: red;
+        }
+        /* tag01+tag02: CSS tất cả thẻ tag02 liền sau(ngay dưới) thẻ tag01  */
+         #div04>p+span{
+            color: red;
+        }
+        /* tag01, tag02: CSS tất cả thẻ tag01 và tag02*/
+        #div01,#div02{
+            background-color: yellow;
+        }
+        span{
+            color: blue;
+        }
+
+        #tieu-de{
+            background-color: green;
+        }
+        .tieu-de{
+            background-color: orchid !important;
+        }
+    </style>
+    </head>
+    <body>
+        <div id="div01">
+            <p>
+                <span>tag01 tag02</span>
+                <span>tag01 tag02</span>
+                <span>tag01 tag02</span>
+            </p>
+            <span>tag01 tag02</span>
+            <span>tag01 tag02</span>
+            <span>tag01 tag02</span>
+        </div>
+        <hr>
+        <div id="div02">
+            <p>
+                <span>tag01>tag02</span>
+            </p>
+            <span>tag01>tag02</span>
+            <span>tag01>tag02</span>
+            <p>
+                <span>tag01>tag02</span>
+                <span>tag01>tag02</span>
+            </p>
+        </div>
+        <hr>
+        <div id="div03">
+            <span>tag01~tag02</span>
+            <p>
+                <span>tag01~tag02</span>
+            </p>
+            <span>tag01~tag02</span>
+            <span>tag01~tag02</span>
+            <span>tag01~tag02</span>
+        </div>
+        <hr>
+        <div id="div04">
+            <span>tag01~tag02</span>
+            <p>
+                <span>tag01~tag02</span>
+            </p>
+            <span>tag01~tag02</span>
+            <span>tag01~tag02</span>
+            <span>tag01~tag02</span>
+        </div>
+
+        <h2 id="tieu-de" class="tieu-de">Tiêu đề</h2>
+    </body>
+</html>

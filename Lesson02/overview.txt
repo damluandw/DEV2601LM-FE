@@ -1,0 +1,39 @@
+Bài lab nộp thông qua classroom: nộp bằng link git.
+Một số câu lệnh git:
+Làm 1 lần:
+    git config --global user.name "Your Name"
+    git config --global user.email "your.email@example.com"
+Kiểm tra:
+    git config --global --list
+
+Up file:
+    git add .
+    git commit -m "nội dung"
+    git push
+
+lấy dữ liệu lần đầu về:
+    git clone link_đường_dẫn
+
+cập nhật dữ liệu mới nhất:
+    git pull
+
+
+Một số phím tắt nhanh:
+ctrl + C: copy
+ctrl + V: paste
+ctrl + X : cut
+ctrl + Z: quay lại
+ctrl + Y: tiến lên
+
+alt + shift + F : format code 
+alt + shift + mũi tên lên/xuống : copy
+ctrl + D : khoanh các nội dung giống nhau (trỏ/sửa nhiều cùng 1 lúc)
+ctrl+ /: comment
+tab : nhảy đến phần code tiếp theo
+
+tag:  là thẻ HTML 
+tag01#tên_id.tên_class>tag02#tên_id.tên_class*n: Tạo n thẻ tag02 nằm bên trong thẻ tag01
+
+VD:
+table>thead>tr*số_lượng>th*số_lượng
+=> 

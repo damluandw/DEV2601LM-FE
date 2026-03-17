@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Đăng nhập</title>
+        <style>
+            .err {
+            color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <form action>
+            <div>
+                <label for="username">Tên đăng nhập:</label>
+                <input type="text" id="username" name="username">
+                <p class="err"></p>
+            </div>
+            <div>
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" name="password">
+                <p class="err"></p>
+            </div>
+            <div>
+                <button>Đăng nhập</button>
+                <button id="ShowPass">Hiển thị MK</button>
+            </div>
+        </form>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>          
+            var regexUsername = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            // var regexPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+            var regexPassword = /^.{8,}$/;
+            $("input").blur(function() {
+                var valueInput = $(this).val();
+                if (valueInput === "") {
+                    $(this).next(".err").html("Không được để trống");
+                } else if($(this).attr("id") === "username" && !regexUsername.test(valueInput)) {
+                    $(this).next(".err").html("Tên đăng nhập không hợp lệ");
+                } else if($(this).attr("id") === "password" && !regexPassword.test(valueInput)) {
+                    $(this).next(".err").html("Mật khẩu phải có ít nhất 8 ký tự");
+                }   
+                else {
+                    $(this).next(".err").html("");
+                }                
+            });
+            
+            $("#ShowPass").click( function() {
+                event.preventDefault(); // Ngăn chặn hành vi mặc định của nút (submit form)
+                if ($("#password").attr("type") === "password") {
+                    $("#password").attr("type", "text");
+                    $(this).text("Ẩn MK");
+                }
+                else {
+                    $("#password").attr("type", "password");
+                    $(this).text("Hiển thị MK");
+                }
+            })
+            
+           
+        </script>
+    </body>
+</html>

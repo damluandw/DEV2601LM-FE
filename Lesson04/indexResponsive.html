@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive</title>
+
+        <style>
+            /* *{
+                background-color: blue;
+            }
+            @media (max-width:500px) {
+                *{
+                    background-color: yellow;
+                }
+            }
+            @media (min-width:501px) and (max-width:768px) {
+                *{
+                    background-color: red;
+                }
+            } */
+            /* Mobile */
+           .products{
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap: 20px;
+            }
+            .product-item{
+                background-color: #eee;
+                padding: 20px;
+                text-align: center;
+            }
+            /* Tbale */
+            @media (min-width:768px) {
+            .products{
+                grid-template-columns: repeat(2, 1fr);
+            }
+            }
+            /* Desktop */
+            @media (min-width:992px) {
+                .products{
+                grid-template-columns: repeat(4, 1fr);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="products">
+            <div class="product-item">Sản phẩm 1</div>
+            <div class="product-item">Sản phẩm 2</div>
+            <div class="product-item">Sản phẩm 3</div>
+            <div class="product-item">Sản phẩm 4</div>
+            <div class="product-item">Sản phẩm 5</div>
+            <div class="product-item">Sản phẩm 6</div>
+            <div class="product-item">Sản phẩm 7</div>
+            <div class="product-item">Sản phẩm 8</div>
+            <div class="product-item">Sản phẩm 9</div>
+        </div>
+    </body>
+</html>

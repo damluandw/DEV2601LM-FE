@@ -1,0 +1,126 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Danh sách sản phẩm</title>
+        <style>
+            *{
+                font-size: 16px;
+            }
+            .product-box {
+                width: 30%;          
+                border: 1px solid #ccc;
+                margin-bottom: 10px;
+            }           
+            .w-100 {
+                width: 100%;
+            }
+            h1{
+                text-align: center;
+            }
+            .produc-content{
+                text-align: center;
+                font-size: 1rem;
+            }
+            a{
+                text-decoration: none;
+                color: black;
+            }
+            #productList{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <h1>Danh sách sản phẩm</h1>
+            <div id="productList">
+                <!-- <div class="product-box">
+                    <div class="product-img">
+                        <img class="w-100"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLg4PAK3s0-p_6j8rFUtNbNyqclNj-AI8sJg&s"
+                            alt="iphone">
+                    </div>
+                    <div class="produc-content">
+                        <a href="#"><h3 class="product-name">Iphone 14 Pro
+                                Max</h3></a>
+                        <p class="product-price">Giá: 30.000.000đ</p>
+                    </div>
+                </div> -->
+
+            </div>
+        </section>
+        <script>
+            var productList = [
+                {
+                    id: 1,
+                    name: "Iphone 14 Pro Max",
+                    price: "30.000.000đ",
+                    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLg4PAK3s0-p_6j8rFUtNbNyqclNj-AI8sJg&s"
+                },
+                {
+                    id:2,
+                    name: "Iphone 15 Pro Max",
+                    price: "20.000.000đ",
+                    img: "https://product.hstatic.net/1000406564/product/iphonexs-1_a39c946bbe6140d9b301585f9df3b381_master.jpg"
+                },
+                {
+                    id:3,
+                    name: "Iphone 12 Pro Max",
+                    price: "32.000.000đ",
+                    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN808conEJpCVHOo4dPuTk68TM33lz3oFtfw&s"
+                },
+                {
+                    id:4,
+                    name: "Iphone 11 Pro ",
+                    price: "52.000.000đ",
+                    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLg4PAK3s0-p_6j8rFUtNbNyqclNj-AI8sJg&s"
+                },
+                {
+                    id:5,
+                    name: "Iphone 10 Pro ",
+                    price: "27.000.000đ",
+                    img: "https://cdn.dienthoaigiakho.vn/photos/1761636732753-Xiaomi-Redmi-15C-2.jpg"
+                },
+                {
+                    id:6,
+                    name: "Iphone 14 Pro ",
+                    price: "28.000.000đ",
+                    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN808conEJpCVHOo4dPuTk68TM33lz3oFtfw&s"
+                }
+            ]
+            
+            localStorage.setItem("productList", JSON.stringify(productList));
+           
+            let savedProductList = localStorage.getItem("productList");
+            if (savedProductList) {
+                productList = JSON.parse(savedProductList);
+            }
+
+            function renderProduct(pro){
+                let html = `<div class="product-box">
+                    <div class="product-img">
+                        <img class="w-100"
+                            src="${pro.img}"
+                            alt="iphone">
+                    </div>
+                    <div class="produc-content">
+                        <a href="#/${pro.id}"><h3 class="product-name">${pro.name}</h3></a>
+                        <p class="product-price">Giá: ${pro.price}</p>
+                    </div>
+                </div>`;
+                return html;
+            }
+            function renderListProduct(listPro){
+                let html = "";
+                for(var i = 0; i < listPro.length; i++){
+                    html += renderProduct(listPro[i]);
+                }
+                document.getElementById("productList").innerHTML = html;
+            }
+            renderListProduct(productList);
+        </script>
+    </body>
+</html>
