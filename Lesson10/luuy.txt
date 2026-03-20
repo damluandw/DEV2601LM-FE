@@ -1,0 +1,26 @@
+1. Quy tắc class boostrap
+VD: 
+- CSS thường : 
+    +"display: block/none "
+    + text-algin: center
+    + button
+systax: tên_thuộc_tính_CSS: giá trị thuộc tính
+- boostrap:
+    + d-block/ d-none/d-flex/ d-inline
+    + text-algin-center
+    + btn
+
+systax: tên_thuộc_tính_CSS/Tên_viết_tắt - giá_trị_thuộc_tính/1_từ_viết_tắt
+systax responsive: tên_thuộc_tính_CSS/Tên_viết_tắt - từ_khóa_responsive - giá_trị_thuộc_tính/1_từ_viết_tắt
+
+- ví trị trong boostrap: t,b,s,e,x,y, blank
+    margrin, padding - từ viết tắt: m/p-t,b,s,e,x,y,blank-1,2,3,4,5,auto
+
+- bảng màu:
+ + primary, danger, success, warning, light, dark, secondary, info
+
+=> chữ: text-color
+=> button: btn-color
+=> border: border-color
+=> background: bg-color
+
