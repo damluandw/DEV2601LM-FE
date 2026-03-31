@@ -1,0 +1,103 @@
+1. HTML
+- thường là cặp thẻ
+- tính chất của các thẻ: inline, block
+- thuộc tính(attribute):
+    + có săn: type, class, id, name, ....
+    + tự đặt: 
+
+- thẻ thường dùng:
++ Table: thead, tbody,tfoot, th, tr, td
++ Form: input, button, texteara, select, option
++ thẻ bố cục nội dung:
+    ++ hedear, section, footer, nav
+    ++ div,p
+    ++ a, span, lable
+    ++ image
+    ++ h1,h2,h3,h4,h5,h6
+++ giá trị type của thẻ input: text, password, number, email, datetime, file, radio, checkbox, submit, button,....
+2. CSS
+    2.1. Các sử dụng CSS
+        + style = ""
+        + <style></style>
+        + <link src="">
+    2.2. Thuộc tính CSS và giá trị thuộc tính CSS
+        - systax: 
+            tên_thuộc_tính_CSS : giá_trị_thuộc_tính_CSS_1 giá_trị_thuộc_tính_CSS_2 giá_trị_thuộc_tính_CSS_3;
+            VD: display: none;
+                border: 1px solid #000;
+        - một số từ khóa:
+            + display,width, height,max/min-width,max/min-height
+            + margin/padding
+            + text-, font-(thêm số từ khóa khác: font-size, text-algin)
+            + border, border-radius
+            + position, z-index, top, left, right, bottom, tranditional
+            + :before, :after, content
+            + :hover
+            + color, background
+            + ainamtion, ...
+        + @font-face, @media
+    2.3. Cách tương tác CSS với HTML
+        + tương tác thông qua tên thẻ HTML
+        + tương tác thông qua tên class của thẻ HTML
+        + tương tác thông qua tên id của thẻ HTML
+        + tương tác thông qua tên thuộc tính của thẻ HTML
+    2.4. Tương tác CSS với HTML nâng cao
+        + tag01 tag02
+        + tag01>tag02
+        + tag01 + tag02
+        + tag01 ~ tag02
+        + tag01, tag02
+        + .....
+    2.5. Lưu ý - độ ưu tiên trong CSS
+        + CSS viết sau/dưới thì sẽ được ưu tiên sử dụng
+        + Nếu cùng 1 thẻ: !important > tên_id > tên_class > tên_thuộc_tính_CSS > tên_thẻ
+        + CSS càng trỏ chi tiết hoặc càng gần thì càng được ưu tiên sử dụng
+3. JS - ngôn ngữ lập trình
+    + biến, toán tử, mảng, object
+    + cấu trúc rẽ nhánh
+    + vòng lặp
+    + xử lý chuỗi
+    + xử lý ngày tháng
+    + hàm
+    + regular exception/ localStorage/sesionStorage/cookie
+    + Cách sử dụng JS trong HTML
+        ++ inline:  sư_kiện = ""
+        ++ internal: <script></script>
+        ++ external : <script src=""></script>
+4. DOM/Jquerry - tương tác JS với HTML
+    4.1 DOM
+        4.1.1. Gọi đến HTML
+            + document.getElementById('tên_id')
+            + document.getElementByByClassName('tên_class')
+            + document.getElementByTagName('tên_thẻ')
+            + document.querrySelecterAll('CSS_Select')
+        4.1.2. Trả lời câu hỏi khi nào thực hiện hành động -sự kiện
+            + .onclick, .onblur,...
+            + addEventListener('sư_kiện', =>{})
+        4.1.3. Thay đổi vị trí tương tác
+            + parent, children,siblling,next....
+        4.1.4. Thay đổi HTML và CSS
+            + HTML = ''
+            + innerHTML= ''
+            + text = ''
+            + style.thuộc_tính = 'giá_trị_thuộc_tính'
+    4.2 Jquerry
+        4.2.1. Gọi đến HTML
+            + $('CSS_Select')
+        4.2.2. Trả lời câu hỏi khi nào thực hiện hành động -sự kiện
+            + .click(), .blur()
+            + .on('sư_kiện')
+        4.2.3. Thay đổi vị trí tương tác
+            + parent(), children(), next(), siblling()
+        4.2.4. Thay đổi HTML và CSS
+            + html()
+            + append()
+            + css('tên_thuộc_tính','giá_trị_thuộc_tính')
+5. Boostrap
+    - Nhớ tên các class có sẵn
+6. Photoshop
+    - cắt ảnh
+    - đo kích thước
+    - lấy màu sắc
+    -  lấy font chữ
+7. Slick, Fontawsome,...

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trang chủ</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/layer.css">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid d-flex justify-content-between">
+                        <div class="logo-img">
+                            <img src="imgs/logo.png" alt="Logo">
+                        </div>
+                        <button class="navbar-toggler" type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div
+                            class="collapse navbar-collapse justify-content-evenly"
+                            id="navbarSupportedContent">
+                            <form class="d-flex" role="search">
+                                <input class="form-control" type="search"
+                                    id="input-search"
+                                    placeholder="Hôm nay bạn muốn ăn gì..."
+                                    aria-label="Search" />
+                                <button id="btn-search"
+                                    class="btn btn-outline-success"
+                                    type="submit"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
+                            </form>
+                            <ul class="navbar-nav mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active"
+                                        aria-current="page"
+                                        href="#"><span><i
+                                                class="fa-solid fa-house"></i></span><br><span>
+                                            Trang chủ
+                                        </span></a>
+                                </li>
+                                <li class="nav-item">
+
+                                    <a class="nav-link"
+                                        aria-current="page"
+                                        href="#"><span><i
+                                                class="fa-solid fa-circle-info"></i></span><br><span>
+                                            Giới thiệu
+                                        </span></a>
+                                </li>
+                                <li class="nav-item">
+
+                                    <a class="nav-link"
+                                        aria-current="page"
+                                        href="#"><span><i
+                                                class="fa-solid fa-gift"></i></span><br><span>
+                                            Ưu đãi
+                                        </span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                        aria-current="page"
+                                        href="#"><span><i
+                                                class="fa-solid fa-bullhorn"></i></span><br><span>
+                                            Tin tức
+                                        </span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                        aria-current="page"
+                                        href="#"><span><i
+                                                class="fa-regular fa-envelope"></i></span><br><span>
+                                            Liên hệ
+                                        </span></a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div id="box-sign">
+                            <button type="submit"
+                                class="btn bg-yellow text-white">
+                                Đăng nhập
+                            </button>
+                            <button type="submit" class="btn cl-yellow">
+                                Đăng ký
+                            </button>
+                        </div>
+                        <div id="box-infor">
+                            <p>
+                                <span><i
+                                        class="fa-2xl fa-solid fa-circle-user cl-yellow"></i></span>
+                                <span id="name-user">User Name</span>
+                                <span><i
+                                        class="fa-solid fa-angle-down"></i></span>
+                            </p>
+                            <div id="box-infor-hover">
+                                <p><a href="#">Tài khoản của tôi</a></p>
+                                <p id="btn-dang-xuat"><a href="#">Đăng
+                                        xuất</a></p>
+                            </div>
+                        </div>
+                        <!-- <div class="diagonal-box"></div> -->
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <footer>
+            <div class="container-xxl">
+                <div class="row">
+                    <div class="col-3">
+                        <h4>Liên hệ</h4>
+
+                        <address>
+                            <span><i
+                                    class="fa-solid fa-location-dot"></i></span>
+                            <span>58 Tố Hữu, Thanh Xuân, Hà
+                                Nội
+
+                            </span>
+                        </address>
+
+                        <p>
+                            <span><i class="fa-solid fa-phone"></i></span> <a
+                                href="tel:+842437835639">(024).3783.5639</a>
+                        </p>
+                        <p>
+                            <span><i class="fa-solid fa-envelope"></i></span>
+                            <a
+                                href="mailto:info@adcvietnam.net">info@adcvietnam.net</a>
+                        </p>
+                        <p>
+                            <span><i class="fa-solid fa-globe"></i></span><a
+                                href="www.adcvietnam.net">www.adcvietnam.net</a>
+                        </p>
+                    </div>
+                    <div class="col-3">
+                        <h4>Về Leskin</h4>
+                        <p>
+                            <a href="#">Về chúng tôi</a>
+                        </p>
+                        <p>
+                            <a href="#">Sứ mệnh</a>
+                        </p>
+                        <p>
+
+                            <a href="#">Tăng trưởng</a>
+                        </p>
+                        <p>
+                            <a href="#">Quan hệ cổ đông</a>
+                        </p>
+                    </div>
+                    <div class="col-3">
+                        <h4>Tải App ngay</h4>
+
+                        <div class="img-download">
+                            <img src="imgs/CH_download.png" alt="CH-download">
+                        </div>
+                        <div class="img-download">
+                            <img src="imgs/AppStore_download.png"
+                                alt="AppStore-download">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <h4>NewLetter</h4>
+                        <p>
+                            <span>Đăng ký để nhận ưu đãi hàng tháng</span>
+                        </p>
+                        <p>
+                            <input placeholder="Nhập email" type="email"
+                                name="email"
+                                id="email">
+                            <button type="submit"><i
+                                    class="fa-regular fa-paper-plane"></i></button>
+                        </p>
+                        <p class="footer-icon">
+                            <a href="#">
+                                <i
+                                    class="fa-2xl fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i
+                                    class="fa-2xl fa-brands fa-youtube"></i></a>
+                            <a href="#"><i
+                                    class="fa-2xl fa-brands fa-instagram"></i></a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            const nameLocalUser = 'DEV2601_DangNhap';
+            function getUser(){
+                 var user = localStorage.getItem(nameLocalUser) ? 
+                JSON.parse(localStorage.getItem(nameLocalUser)) : [];
+                return user;                
+            }
+             function setUser(user){
+                localStorage.setItem(nameLocalUser,JSON.stringify(user));                               
+            }
+            var tk = {
+                name: 'Devmaster',
+                mk:'123'
+            }
+
+            function KiemTraDangNhap(){
+                var user = getUser();
+                // if (Object.keys(user).length === 0) {
+                //     console.log("Object rỗng");
+                // }
+
+                // // Kiểm tra thuộc tính
+                // if (user.hasOwnProperty('name')) {
+                //     console.log("User có tên");
+                // }
+                if($.isEmptyObject(user) ){
+                    $("#box-sign").show();
+                    $("#box-infor").hide();
+                }else{
+                    $("#box-sign").hide();
+                    $("#box-infor").show();
+                    $("#name-user").html(user.name);
+                }
+            }
+
+            function InforShow(){
+                // e.preventDefault()
+                console.log("d")
+                var kt = $("#box-infor-hover").css("display");
+                 if(kt=='none'){
+                     $("#box-infor-hover").show();
+                 }else{
+                    $("#box-infor-hover").hide();
+                 }
+            }
+            function DangXuat(){
+                //  localStorage.setItem(nameLocalUser,[]);
+                 localStorage.removeItem(nameLocalUser);
+                 KiemTraDangNhap();
+            }
+            
+            // InforShow()
+
+            $(document).ready(function() {
+
+                // setUser(tk);
+                KiemTraDangNhap();
+                $("#box-infor").click(function(){
+                   InforShow()
+                });
+                $('#btn-dang-xuat').click(function(){
+                    DangXuat()
+                })
+            });
+            
+            // $("#box-infor").on("click", InforShow())
+
+        </script>
+    </body>
+</html>
